@@ -1,10 +1,11 @@
 # Add  code here!
-def prime?(n)
-  if n > 1 && n % n == 0 
-    true
+def prime?(number)
+  start = 2
+  if number > 1
+    range = (start..number-1).to_a
+    range.none? do |num_to_test|
+      number % num_to_test == 0
+    end
   else
     false
   end
-end 
-
-(2..n/2).none? { |i| n % i == 0}
